@@ -1,2 +1,2 @@
-# -j3RKi98G
+# j3RKi98G
 Proiectul 2
