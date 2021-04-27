@@ -1,0 +1,114 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: OutsourcedPart</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">inventory.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: OutsourcedPart (inventory.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">OutsourcedPart</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 5)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;
+<i>2</i>&nbsp;package inventory.model;
+<i>3</i>&nbsp;
+<i>4</i>&nbsp;
+<i>5</i>&nbsp;public class OutsourcedPart extends Part {
+<i>6</i>&nbsp;    
+<i>7</i>&nbsp;    // Declare fields
+<i>8</i>&nbsp;    private String companyName;
+<i>9</i>&nbsp;
+<i>10</i>&nbsp;    // Constructor
+<i>11</i>&nbsp;    public OutsourcedPart(int partId, String name, double price, int inStock, int min, int max, String companyName) {
+<b class="nc"><i>12</i>&nbsp;        super(partId, name, price, inStock, min, max);</b>
+<b class="nc"><i>13</i>&nbsp;        this.companyName = companyName;</b>
+<i>14</i>&nbsp;    }
+<i>15</i>&nbsp;    
+<i>16</i>&nbsp;    // Getter
+<i>17</i>&nbsp;    public String getCompanyName() {
+<b class="nc"><i>18</i>&nbsp;        return companyName;</b>
+<i>19</i>&nbsp;    }
+<i>20</i>&nbsp;    
+<i>21</i>&nbsp;    // Setter
+<i>22</i>&nbsp;    public void setCompanyName(String companyName) {
+<b class="nc"><i>23</i>&nbsp;        this.companyName = companyName;</b>
+<i>24</i>&nbsp;    }
+<i>25</i>&nbsp;
+<i>26</i>&nbsp;    @Override
+<i>27</i>&nbsp;    public String toString() {
+<b class="nc"><i>28</i>&nbsp;        return &quot;O,&quot;+super.toString()+&quot;,&quot;+getCompanyName();</b>
+<i>29</i>&nbsp;    }
+<i>30</i>&nbsp;
+<i>31</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-04-27 12:21</div>
+</div>
+</body>
+</html>

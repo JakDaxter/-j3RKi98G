@@ -1,0 +1,139 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: InventoryTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">inventory.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: InventoryTest (inventory.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">InventoryTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (33/ 33)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package inventory.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import javafx.collections.FXCollections;
+<i>4</i>&nbsp;import javafx.collections.ObservableList;
+<i>5</i>&nbsp;import org.junit.jupiter.api.DisplayName;
+<i>6</i>&nbsp;import org.junit.jupiter.api.Test;
+<i>7</i>&nbsp;import org.junit.jupiter.params.ParameterizedTest;
+<i>8</i>&nbsp;
+<i>9</i>&nbsp;import static org.junit.jupiter.api.Assertions.*;
+<i>10</i>&nbsp;
+<b class="fc"><i>11</i>&nbsp;class InventoryTest {</b>
+<i>12</i>&nbsp;
+<i>13</i>&nbsp;    @Test
+<i>14</i>&nbsp;    void lookupProduct() {
+<b class="fc"><i>15</i>&nbsp;        lookupProduct1();</b>
+<b class="fc"><i>16</i>&nbsp;        lookupProduct2();</b>
+<b class="fc"><i>17</i>&nbsp;        lookupProduct3();</b>
+<b class="fc"><i>18</i>&nbsp;        lookupProduct4();</b>
+<b class="fc"><i>19</i>&nbsp;    }</b>
+<i>20</i>&nbsp;
+<i>21</i>&nbsp;    void lookupProduct1(){
+<b class="fc"><i>22</i>&nbsp;        Inventory inv=new Inventory();</b>
+<b class="fc"><i>23</i>&nbsp;        Part p= new InhousePart(1,&quot;Part&quot;,19.9,2,1,10,1);</b>
+<b class="fc"><i>24</i>&nbsp;        ObservableList&lt;Part&gt; addParts = FXCollections.observableArrayList();</b>
+<b class="fc"><i>25</i>&nbsp;        addParts.add(p);</b>
+<b class="fc"><i>26</i>&nbsp;        for(int i=0;i&lt;10;i++) {</b>
+<b class="fc"><i>27</i>&nbsp;            inv.addProduct(new Product(i, &quot;Name&quot;+i,i,i+1,1,100,addParts));</b>
+<i>28</i>&nbsp;        }
+<b class="fc"><i>29</i>&nbsp;        assert (inv.lookupProduct(&quot;Name5&quot;).getProductId()==5);</b>
+<b class="fc"><i>30</i>&nbsp;    }</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    void lookupProduct2(){
+<b class="fc"><i>33</i>&nbsp;        Inventory inv=new Inventory();</b>
+<b class="fc"><i>34</i>&nbsp;        Part p= new InhousePart(1,&quot;Part&quot;,19.9,2,1,10,1);</b>
+<b class="fc"><i>35</i>&nbsp;        ObservableList&lt;Part&gt; addParts = FXCollections.observableArrayList();</b>
+<b class="fc"><i>36</i>&nbsp;        addParts.add(p);</b>
+<b class="fc"><i>37</i>&nbsp;        for(int i=0;i&lt;10;i++) {</b>
+<b class="fc"><i>38</i>&nbsp;            inv.addProduct(new Product(i, &quot;Name&quot;+i,i,i+1,1,100,addParts));</b>
+<i>39</i>&nbsp;        }
+<b class="fc"><i>40</i>&nbsp;        assert (inv.lookupProduct(&quot;Name11&quot;)==null);</b>
+<b class="fc"><i>41</i>&nbsp;    }</b>
+<i>42</i>&nbsp;    void lookupProduct3(){
+<b class="fc"><i>43</i>&nbsp;        Inventory inv=new Inventory();</b>
+<b class="fc"><i>44</i>&nbsp;        Part p= new InhousePart(1,&quot;Part&quot;,19.9,2,1,10,1);</b>
+<b class="fc"><i>45</i>&nbsp;        ObservableList&lt;Part&gt; addParts = FXCollections.observableArrayList();</b>
+<b class="fc"><i>46</i>&nbsp;        addParts.add(p);</b>
+<b class="fc"><i>47</i>&nbsp;        for(int i=0;i&lt;10;i++) {</b>
+<b class="fc"><i>48</i>&nbsp;            inv.addProduct(new Product(i, &quot;Name&quot;+i,i,i+1,1,100,addParts));</b>
+<i>49</i>&nbsp;        }
+<b class="fc"><i>50</i>&nbsp;        assert (inv.lookupProduct(&quot;&quot;).getProductId()==0);</b>
+<b class="fc"><i>51</i>&nbsp;    }</b>
+<i>52</i>&nbsp;    void lookupProduct4() {
+<b class="fc"><i>53</i>&nbsp;        Inventory inv=new Inventory();</b>
+<b class="fc"><i>54</i>&nbsp;        assert (inv.lookupProduct(&quot;Name3&quot;).getProductId()==0);</b>
+<b class="fc"><i>55</i>&nbsp;    }</b>
+<i>56</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-04-27 12:21</div>
+</div>
+</body>
+</html>
