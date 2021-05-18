@@ -1,0 +1,14 @@
+
+—
+java:S1158"~Call the static method Integer.toString(...) instead of instantiating a temporary object to perform this to string conversion.(ƒ®øÿÿÿÿÿ
+8
+java:S2131"Use "Integer.toString" instead.(ƒ®øÿÿÿÿÿ
+
+java:S4165"mRemove this useless assignment; "associatedParts" already holds the assigned value along all execution paths.(˜øÒ²
+T	java:S125"<This block of commented-out lines of code should be removed.(îÌ¹üÿÿÿÿ
+C
+java:S1656"/Remove or correct this useless self-assignment.(˜øÒ²
+W
+java:S1854"CRemove this useless assignment to local variable "associatedParts".(˜øÒ²
+H
+java:S1874"/Remove this use of "Integer"; it is deprecated.(ƒ®øÿÿÿÿÿ

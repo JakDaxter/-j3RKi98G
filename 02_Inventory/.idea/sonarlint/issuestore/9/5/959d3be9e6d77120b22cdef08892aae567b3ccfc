@@ -1,0 +1,14 @@
+
+`
+java:S2095"LUse try-with-resources or close this "BufferedWriter" in a "finally" clause.(ù»ı
+X
+java:S2147"DCombine this catch with the one at line 36, which has the same body.(ï­£Ä
+`
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦
+X
+java:S2147"DCombine this catch with the one at line 89, which has the same body.(ï­£Ä
+0
+java:S1643"Use a StringBuilder instead.(ŠÑ‡à
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(Ñ£±Ôúÿÿÿÿ
+`
+java:S2095"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ãÈˆ¦
