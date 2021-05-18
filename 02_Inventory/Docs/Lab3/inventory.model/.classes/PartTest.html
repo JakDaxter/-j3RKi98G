@@ -1,0 +1,130 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: PartTest</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">inventory.model</a> ]
+</div>
+
+<h1>Coverage Summary for Class: PartTest (inventory.model)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">PartTest</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 4)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    0%
+  </span>
+  <span class="absValue">
+    (0/ 11)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;package inventory.model;
+<i>2</i>&nbsp;
+<i>3</i>&nbsp;import org.junit.jupiter.api.*;
+<i>4</i>&nbsp;import org.junit.jupiter.params.ParameterizedTest;
+<i>5</i>&nbsp;import org.junit.jupiter.params.provider.ValueSource;
+<i>6</i>&nbsp;
+<i>7</i>&nbsp;import java.lang.Math;
+<i>8</i>&nbsp;
+<b class="nc"><i>9</i>&nbsp;class PartTest {</b>
+<i>10</i>&nbsp;
+<i>11</i>&nbsp;    @Tag(&quot;Tagul&quot;)
+<i>12</i>&nbsp;    @Timeout(1000)
+<i>13</i>&nbsp;    @RepeatedTest(2)
+<i>14</i>&nbsp;    void isValidPart() {
+<b class="nc"><i>15</i>&nbsp;        isValidPartBVA(0);</b>
+<b class="nc"><i>16</i>&nbsp;        isValidPartECP(0);</b>
+<i>17</i>&nbsp;    }
+<i>18</i>&nbsp;    @DisplayName(&quot;BVA&quot;)
+<i>19</i>&nbsp;    @ParameterizedTest(name=&quot;assert {0} is ok&quot;)
+<i>20</i>&nbsp;    @ValueSource(ints={1,2,3,4})
+<i>21</i>&nbsp;    void isValidPartBVA(int ok){
+<i>22</i>&nbsp;        //BVA
+<i>23</i>&nbsp;        //Price Valid
+<b class="nc"><i>24</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,0.01,10,1,100,&quot;&quot;).equals(&quot;&quot;));</b>
+<i>25</i>&nbsp;        //Price not Valid
+<b class="nc"><i>26</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,0.01-Math.ulp(1.0),10,1,100,&quot;&quot;).equals(&quot;The price must be greater than 0. &quot;));</b>
+<i>27</i>&nbsp;        //InStock Valid
+<b class="nc"><i>28</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,0.01+Math.ulp(1.0),1,1,100,&quot;&quot;).equals(&quot;&quot;));</b>
+<i>29</i>&nbsp;        //InStock not Valid
+<b class="nc"><i>30</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,0.01+Math.ulp(1.0),1-1,0,100,&quot;&quot;).equals(&quot;Inventory level must be greater than 0. &quot;));</b>
+<i>31</i>&nbsp;
+<i>32</i>&nbsp;    }
+<i>33</i>&nbsp;    @DisplayName(&quot;ECP&quot;)
+<i>34</i>&nbsp;    @ParameterizedTest(name=&quot;assert {0} is ok&quot;)
+<i>35</i>&nbsp;    @ValueSource(ints={1,2,3,4})
+<i>36</i>&nbsp;    void isValidPartECP(int ok){
+<i>37</i>&nbsp;        //All valid ecp
+<b class="nc"><i>38</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,10.0,10,1,100,&quot;&quot;).equals(&quot;&quot;));</b>
+<i>39</i>&nbsp;        //price Not valid
+<b class="nc"><i>40</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,-10.0,10,1,100,&quot;&quot;).equals(&quot;The price must be greater than 0. &quot;));</b>
+<i>41</i>&nbsp;        //InStock Not Valid
+<b class="nc"><i>42</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,10.0,-10,-100,100,&quot;&quot;).equals(&quot;Inventory level must be greater than 0. &quot;));</b>
+<i>43</i>&nbsp;        //min&gt;max &amp;&amp; InStock&gt;max
+<b class="nc"><i>44</i>&nbsp;        assert (Part.isValidPart(&quot;Name1&quot;,10.0,10,1,-100,&quot;&quot;).equals(&quot;The Min value must be less than the Max value. Inventory level is higher than the maximum value. &quot;));</b>
+<i>45</i>&nbsp;
+<i>46</i>&nbsp;    }
+<i>47</i>&nbsp;}
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-04-27 12:21</div>
+</div>
+</body>
+</html>

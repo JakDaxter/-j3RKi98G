@@ -58,7 +58,7 @@ public class Product {
     
     // Setters
     public void setAssociatedParts(ObservableList<Part> associatedParts) {
-        this.associatedParts = associatedParts;
+        associatedParts = associatedParts;
     }
 
     public void setProductId(int productId) {
@@ -94,12 +94,11 @@ public class Product {
         associatedParts.remove(part);
     }
     
-    public ObservableList<Part> lookupAssociatedPart(String searchItem) {
-        ObservableList<Part> rez=FXCollections.observableArrayList();
+    public Part lookupAssociatedPart(String searchItem) {
         for(Part p:associatedParts) {
-            if(p.getName().contains(searchItem) || String.valueOf(p.getPartId()).equals(searchItem))  rez.add(p);
+            if(p.getName().contains(searchItem) || new Integer(p.getPartId()).toString().equals(searchItem)) return p;
         }
-        return rez;
+        return null;
     }
     
     /**
